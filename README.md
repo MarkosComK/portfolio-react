@@ -1,46 +1,128 @@
-# Getting Started with Create React App
+# Portfólio pessoal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o meu portfólio pessoal desenvolvido com objetivo de apresentar e registrar minha evolução com desenvolvimento Front-End.
 
-## Available Scripts
+## Tabela de conteúdos
 
-In the project directory, you can run:
+- [Visão Geral](#visao-geral)
+  - [Metas](#metas)
+  - [Capturas de Tela](#capturas-de-tela)
+  - [Paleta de cores](#paleta-de-cores)
+  - [Links](#links)
+- [Meu processo](#meu-processo)
+  - [Feito Com](#feito-com)
+  - [O Que Estou Aprendendo](#o-que-estou-aprendendo)
+  - [Linha Do Tempo](#linha-do-tempo)
+- [Author](#autor)
+- [Considerações Finais](#considerações-finais)
+- [Mensagem Final](#mensagem-final)
 
-### `npm start`
+## Visao Geral
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Metas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Remake my old portfolio with an more creative presentations and also learning new technologies.
 
-### `npm test`
+- Botões interativos. 
+- Sobreposição de elemtos. 
+- Animações dinâmicas em CSS. 
+- Animações dinâmicas em JS. 
+- Utilização de recursos alternativos do HTML. 
+- Responsividade em dispositivos móveis 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Capturas de tela
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Inicio
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Inicio](./screenshot path)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Projetos
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Projetos](./imagens/Captura-de-tela-projetos.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Rodapé
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Rodapé](./imagens/Captura-de-tela-rodape.png)
 
-## Learn More
+### Paleta de cores
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Paleta de cores](./imagens/Paleta-de-cores.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Links
+
+- Link do site: [clique para acessar](https://markoscomk.github.io/Portfolio/index.html)
+
+## Meu processo
+
+### Feito com
+
+- HTML5 
+- CSS3
+- Typescript
+- React.js
+- Styled components
+- Desktop first
+- Figma
+
+### O que estou aprendendo
+
+
+This is my first project in react using typescript and styled components
+
+always learning.
+
+Below some codes used in this portfolio.
+
+```css
+#instagram:hover{
+    fill: #9E452A;
+}
+
+#github:hover{
+    fill: #9E452A;
+}
+
+#twitter:hover{
+    fill: #9E452A;
+}
+
+.contact-button:hover{
+    cursor: pointer;
+    background: #9E453A;
+    color: #FFF;
+}
+```
+
+
+
+### Timeline
+
+First version of my portfolio started in 05 of september 2021 and second version (actual) started in january/2023
+
+
+## Author
+
+- Github - [MarkosComK](https://github.com/MarkosComK)
+- Frontend Mentor - [@MarkosComK](https://www.frontendmentor.io/profile/MarkosComK)
+- linkedin - [@MarkosComK](https://www.linkedin.com/in/markos-soares/)
+- instagram - [@MarkosComK](https://www.instagram.com/markoscomk/)
+
+## Final considerations
+
+If you want to give me some feedback, tip, or just talk to me, feel free to contact me through any of my social medias.
+
+## Mensagem final
+
+"Tudo acontece por uma razão e esta existe para me[/te] ajudar." 😎
+
+<br>
+
+<div>
+  <a href="https://instagram.com/MarkosComK" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%234e2d23?style=for-the-badge&logo=instagram&logoColor=white" target="_blank" ></a>
+ <a href = "mailto:markoscomks@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" ></a>
+</div>
+
+<br>
