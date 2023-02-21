@@ -1,6 +1,7 @@
 import GlobalStyle from "./styles/global"
 import VideoBackground from "./components/VideoBackground"
 import TaskBar from "./components/TaskBar"
+import Calculator from "./components/Calculator";
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
       <GlobalStyle />
       <header>
       </header>
-      <main></main>
+      <main>
+        <Calculator />
+      </main>
       <TaskBar />
     </div>
   );

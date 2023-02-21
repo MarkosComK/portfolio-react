@@ -31,7 +31,10 @@ export const Nav = styled.nav`
             width: 60px;
             height: 60px;
             transition: 0.2s;
-
+            img{
+                width: 60px;
+                transition: 0.2s;
+            }
             &:hover{
                 margin-left: 10px;
                 margin-right: 10px;
