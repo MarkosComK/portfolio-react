@@ -6,6 +6,7 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         scroll-behavior: smooth;
+        font-family: "Roboto";
     }
 
     button, input[type="submit"], input[type="reset"] {
