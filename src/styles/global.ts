@@ -24,6 +24,7 @@ export default createGlobalStyle`
     }
 
     :root {
+        --font-color: #f9fafb;
         --theme-bg-color: rgba(16 18 27 / 40%);
         --border-color: rgba(113 119 144 / 25%);
         --theme-color: #f9fafb;
@@ -39,6 +40,9 @@ export default createGlobalStyle`
         --search-bg:  #14162b;
         --overlay-bg: rgba(36, 39, 59, 0.3);
         --scrollbar-bg: rgb(1 2 3 / 40%);
+        --red-btn: #ff6057;
+        --yellow-btn: #febc2e;
+        --green-btn: #28c841;
     }
 
 `
