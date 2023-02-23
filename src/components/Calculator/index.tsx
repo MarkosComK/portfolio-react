@@ -3,10 +3,17 @@ import { useState } from 'react'
 
 function Calculator(){
     let [firstValue, setFirstValue] = useState('')
+    let [operation, setOperation] = useState('')
+
 
     const addValue = (value: string) => {
         setFirstValue(firstValue += value)
         console.log(firstValue)
+    }
+
+    const addOperation = (value: string) => {
+        setOperation(operation += value)
+        console.log(operation)
     }
 
     return(
@@ -19,26 +26,26 @@ function Calculator(){
                 </div>
             </S.Header>
             <S.Calculus>
-                <div>0</div>
-                <p></p>
+                <div>{firstValue == '' ? '0' : firstValue}</div>
+                <p>{operation}</p>
             </S.Calculus>
             <S.Buttons>
                 <button id="clear" data-delete>AC</button>
-                <button id="percent" data-percent="％">％</button>
-                <button id="divide" data-opt="÷">÷</button>
-                <button id="number" data-number="7">7</button>
-                <button id="number" data-number="8">8</button>
-                <button id="number" data-number="9">9</button>
+                <button onClick={() => {addOperation('％')}}>％</button>
+                <button onClick={() => {addOperation('÷')}}>÷</button>
+                <button onClick={() => {addValue('7')}}>7</button>
+                <button onClick={() => {addValue('8')}}>8</button>
+                <button onClick={() => {addValue('9')}}>9</button>
                 <button id="mult" data-opt="x" >×</button>
-                <button id="number" data-number="4">4</button>
-                <button id="number" data-number="5">5</button>
-                <button id="number" data-number="6">6</button>
-                <button id="sub" data-opt="-">−</button>
-                <button onClick={()=> {addValue('1')}}  value="1">1</button>
-                <button id="number" data-number="2">2</button>
-                <button id="number" data-number="3">3</button>
-                <button id="sum" data-opt="+">+</button>
-                <button id="number" data-number="0">0</button>
+                <button onClick={() => {addValue('4')}}>4</button>
+                <button onClick={() => {addValue('5')}}>5</button>
+                <button onClick={() => {addValue('6')}}>6</button>
+                <button onClick={() => {addOperation('-')}}>−</button>
+                <button onClick={() => {addValue('1')}}>1</button>
+                <button onClick={() => {addValue('2')}}>2</button>
+                <button onClick={() => {addValue('3')}}>3</button>
+                <button onClick={() => {addOperation('+')}}>+</button>
+                <button onClick={() => {addValue('0')}}>0</button>
                 <button id="decimal" data-decimal=".">,</button>
                 <button id="equal" data-opt="=">=</button>
             </S.Buttons>
