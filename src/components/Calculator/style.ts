@@ -82,6 +82,7 @@ export const Calculus = styled.section`
         padding-top: 16px;
         text-align: right;
         font-size: 1.2rem;
+        color: var(--font-color);
     }
 `
 

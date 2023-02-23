@@ -1,8 +1,15 @@
 import * as S from './style'
+import { useState } from 'react'
 
 function Calculator(){
-    return(
+    let [firstValue, setFirstValue] = useState('')
 
+    const addValue = (value: string) => {
+        setFirstValue(firstValue += value)
+        console.log(firstValue)
+    }
+
+    return(
         <S.Calculator>
             <S.Header>
                 <div>
@@ -27,7 +34,7 @@ function Calculator(){
                 <button id="number" data-number="5">5</button>
                 <button id="number" data-number="6">6</button>
                 <button id="sub" data-opt="-">−</button>
-                <button id="number" data-number="1">1</button>
+                <button onClick={()=> {addValue('1')}}  value="1">1</button>
                 <button id="number" data-number="2">2</button>
                 <button id="number" data-number="3">3</button>
                 <button id="sum" data-opt="+">+</button>
