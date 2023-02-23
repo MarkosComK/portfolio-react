@@ -2,15 +2,18 @@ import * as S from './style'
 import { useState } from 'react'
 
 function Calculator(){
+    // set first value
     let [firstValue, setFirstValue] = useState('')
+    // set operation
     let [operation, setOperation] = useState('')
 
-
+    // function to push the values
     const addValue = (value: string) => {
         setFirstValue(firstValue += value)
         console.log(firstValue)
     }
 
+    // function to set the operation
     const addOperation = (value: string) => {
         setOperation(operation += value)
         console.log(operation)
@@ -26,8 +29,9 @@ function Calculator(){
                 </div>
             </S.Header>
             <S.Calculus>
+                {/* displays the value 0 at the start of calculator */}
                 <div>{firstValue == '' ? '0' : firstValue}</div>
-                <p>{operation}</p>
+                <p>{operation}</p> 
             </S.Calculus>
             <S.Buttons>
                 <button id="clear" data-delete>AC</button>
