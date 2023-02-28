@@ -1,7 +1,11 @@
 import styled from "styled-components"
 
-export const Calculator = styled.div`
-    display: inline;
+interface Props {
+    display: boolean
+}
+
+export const Calculator = styled.div<Props>`
+    display: ${props => props.display ? "inline" :  "none"};
     position: absolute;
 
     background-color: var(--theme-bg-color);

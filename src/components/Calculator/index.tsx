@@ -1,7 +1,14 @@
 import * as S from './style'
 import { useState } from 'react'
 
-function Calculator(){
+interface Props {
+    display: boolean
+    handleChangeDisplay: () => void
+}
+
+
+function Calculator({display, handleChangeDisplay}: Props){
+
     // set first value
     let [firstValue,  setFirstValue] = useState('')
 
@@ -92,10 +99,10 @@ function Calculator(){
     }
 
     return(
-        <S.Calculator>
+        <S.Calculator display={display}>
             <S.Header>
                 <div>
-                    <S.Button></S.Button>
+                    <S.Button onClick={handleChangeDisplay}></S.Button>
                     <S.YButton></S.YButton>
                     <S.GButton></S.GButton>
                 </div>
