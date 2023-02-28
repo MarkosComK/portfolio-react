@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 interface Props {
     display: boolean
-    handleChangeDisplay: () => void
+    handleChangeDisplay: (value: number) => void
 }
 
 
@@ -102,7 +102,7 @@ function Calculator({display, handleChangeDisplay}: Props){
         <S.Calculator display={display}>
             <S.Header>
                 <div>
-                    <S.Button onClick={handleChangeDisplay}></S.Button>
+                    <S.Button onClick={() => handleChangeDisplay(1)}></S.Button>
                     <S.YButton></S.YButton>
                     <S.GButton></S.GButton>
                 </div>

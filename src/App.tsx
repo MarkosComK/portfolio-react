@@ -4,18 +4,18 @@ import VideoBackground from "./components/VideoBackground"
 import TaskBar from "./components/TaskBar"
 import Calculator from "./components/Calculator";
 
-interface Display {
-  calculator: boolean
-}
-
 function App() {
   const [calculatorDisplay, setCalculatorDisplay] = useState<boolean>(false)
 
-  const handleChangeDisplay = () => {
-    if(calculatorDisplay){
-      setCalculatorDisplay(false)
-    } else {
-      setCalculatorDisplay(true)
+  function handleChangeDisplay(value: number) {
+    switch(value){
+      case 1:
+        if(calculatorDisplay){
+          setCalculatorDisplay(false)
+        } else {
+          setCalculatorDisplay(true)
+        }
+        break
     }
   }
   
