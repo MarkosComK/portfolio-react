@@ -42,6 +42,7 @@ export const Todo = styled.div<Props>`
             padding: 0 20px 0 40px;
             margin: 0 10px;
             box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+            color: var(--font-color);
         }
         button{
             position: absolute;
