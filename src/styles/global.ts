@@ -44,6 +44,11 @@ export default createGlobalStyle`
         --red-btn: #ff6057;
         --yellow-btn: #febc2e;
         --green-btn: #28c841;
+        /* Glass effect */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        /* border radius */
+        border-radius: 14px;
     }
 
 `

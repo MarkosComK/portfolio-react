@@ -11,26 +11,42 @@ export const Todo = styled.div<Props>`
     position: absolute;
     width: 300px;
     height: 400px;
-    border: 1px solid red;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
+    background-color: var(--theme-bg-color);
+    color: var(--font-color);
+    
     /* Glass effect */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    input{
-        border: 1px solid red;
-        width: 90%;
-        height: 100%;
-        border: none;
-        background-color: var(--search-bg);
-        border-radius: 4px;
-        font-family: var(--body-font);
-        font-size: 15px;
-        font-weight: 500;
-        padding: 0 20px 0 40px;
-        box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+    border-radius: 14px;
+    section{
+        margin: 10px 10px;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input{
+            position: relative;
+            border: 1px solid red;
+            width: 100%;
+            height: 30px;
+            border: none;
+            background-color: var(--search-bg);
+            border-radius: 4px;
+            font-family: var(--body-font);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0 20px 0 40px;
+            margin: 0 10px;
+            box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+        }
+        button{
+            position: absolute;
+            right: 25px;
+        }
     }
 `
 export const Header = styled.header`

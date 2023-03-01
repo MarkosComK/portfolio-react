@@ -21,8 +21,8 @@ function Todo({display, handleChangeDisplay}: Props) {
         </section>
         <main>
             <form action="">
-                <input type="text" />
-                <button type='submit'>kkk</button>
+                <input type="text" placeholder='Add a todo'/>
+                <button type='submit'>Go</button>
             </form>
         </main>
     </S.Todo>
