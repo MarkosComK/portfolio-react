@@ -1,4 +1,5 @@
 import * as S from './style'
+import * as B from '../styles/styledButtons'
 import { useState } from 'react'
 
 interface Props {
@@ -102,9 +103,9 @@ function Calculator({display, handleChangeDisplay}: Props){
         <S.Calculator display={display}>
             <S.Header>
                 <div>
-                    <S.Button onClick={() => handleChangeDisplay(1)}></S.Button>
-                    <S.YButton></S.YButton>
-                    <S.GButton></S.GButton>
+                    <B.RButton onClick={() => handleChangeDisplay(1)}></B.RButton>
+                    <B.YButton></B.YButton>
+                    <B.GButton></B.GButton>
                 </div>
             </S.Header>
             <S.Calculus>

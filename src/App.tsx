@@ -3,19 +3,20 @@ import GlobalStyle from "./styles/global"
 import VideoBackground from "./components/VideoBackground"
 import TaskBar from "./components/TaskBar"
 import Calculator from "./components/Calculator";
+import Todo from "./components/todo";
 
 function App() {
+  // set the Apps display for true or false
   const [calculatorDisplay, setCalculatorDisplay] = useState<boolean>(false)
+  const [todoDisplay, setTodoDisplay] = useState<boolean>(false)
 
   function handleChangeDisplay(value: number) {
     switch(value){
       case 1:
-        if(calculatorDisplay){
-          setCalculatorDisplay(false)
-        } else {
-          setCalculatorDisplay(true)
-        }
+        calculatorDisplay ? setCalculatorDisplay(false) : setCalculatorDisplay(true)
         break
+      case 2:
+        todoDisplay ? setTodoDisplay(false) : setTodoDisplay(true)
     }
   }
   
@@ -28,6 +29,7 @@ function App() {
       </header>
       <main>
         <Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>
+        <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
       </main>
       <TaskBar handleChangeDisplay={handleChangeDisplay}/>
     </div>

@@ -15,6 +15,7 @@ export const Calculator = styled.div<Props>`
     width: 270px;
     border-radius: 14px;
 
+    /* Glass effect */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 
@@ -23,50 +24,15 @@ export const Calculator = styled.div<Props>`
 `
 export const Header = styled.header`
     display: flex;
-        align-items: center;
-        flex-shrink: 0;
-        height: 38px;
-        width: 100%;
-        border-bottom: 1px solid var(--border-color);
-        padding: 0 10px;
-        white-space: nowrap;
+    align-items: center;
+    flex-shrink: 0;
+    height: 38px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 10px;
+    white-space: nowrap;
 `
 
-export const Button = styled.button`
-    margin-right: 0.2rem;
-	width: 1rem;
-	height: 1rem;
-	border: none;
-	border-radius: 50%;
-	line-height: 1;
-	cursor: pointer;
-    color: #000;
-	background: var(--red-btn);
-
-    &::before{
-        content: "";
-        margin-left: -1px;
-        font-size: 1rem;
-    }
-
-    &:hover::before{
-        font-size: 1rem;
-        content: "×";
-    }
-`
-
-export const YButton = styled(Button)`
-    background: var(--yellow-btn);
-    &:hover::before{
-        content: "−";
-    }
-`
-export const GButton = styled(Button)`
-    background: var(--green-btn);
-    &:hover::before{
-        content: "⤢";
-    }
-`
 
 export const Calculus = styled.section`
     margin-top: 2rem;

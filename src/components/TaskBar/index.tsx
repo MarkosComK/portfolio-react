@@ -5,6 +5,7 @@ import safariIcon from "../assets/safari-icon.png"
 import calculatorIcon from "../assets/calculator-icon.png"
 import cameraIcon from "../assets/camera-icon.png"
 import mailIcon from "../assets/mail-icon.png"
+import todoIcon from "../assets/todo-icon.png"
 
 interface Props {
     handleChangeDisplay: (value: number) => void
@@ -35,7 +36,9 @@ function TaskBar({handleChangeDisplay}: Props){
                 onMouseEnter={() => {setHovered({calculator: true})}} 
                 onMouseLeave={() => {setHovered({calculator: false})}} 
                 alt="" /></li>
-                <li><img src={cameraIcon} alt="" /></li>
+                <li><img src={todoIcon} 
+                onClick={() => handleChangeDisplay(2)}
+                alt="" /></li>
                 <li><a href="mailto:markoscomks@gmail.com"><img src={mailIcon} alt="" /></a></li>
             </ul>
         </Nav>
