@@ -11,7 +11,7 @@ function Todo({display, handleChangeDisplay}: Props) {
     <S.Todo display={display}>
         <S.Header>
             <div>
-                <B.RButton/>
+                <B.RButton onClick={() => handleChangeDisplay(2)}/>
                 <B.YButton/>
                 <B.GButton/>
             </div>
