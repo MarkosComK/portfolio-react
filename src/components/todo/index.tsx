@@ -15,12 +15,12 @@ interface Todos {
 
 function Todo({display, handleChangeDisplay}: Props) {
     const [todo, setTodo] = useState('')
-    const [todos, setTodos] =useState<string[]>([])
+    const [todos, setTodos] =useState<Todos[]>([])
 
     // set todo string value
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        setTodos([...todos, todo])
+        setTodos([...todos, {id: Date.now(), task: todo, isDone: false}])
         setTodo('')
     }
     // show todos array when the array state finish
