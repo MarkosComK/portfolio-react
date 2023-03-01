@@ -16,6 +16,15 @@ function Todo({display, handleChangeDisplay}: Props) {
                 <B.GButton/>
             </div>
         </S.Header>
+        <section>
+            here goes the todos
+        </section>
+        <main>
+            <form action="">
+                <input type="text" />
+                <button type='submit'>kkk</button>
+            </form>
+        </main>
     </S.Todo>
   )
 }
