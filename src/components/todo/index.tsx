@@ -37,7 +37,7 @@ function Todo({display, handleChangeDisplay}: Props) {
                 </div>
             </S.Header>
             <section>
-                here goes the todos
+                {todos.map(todo => <li>{todo.task}</li> )}
             </section>
             <main>
                 <form onSubmit={handleSubmit}>
