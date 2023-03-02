@@ -15,13 +15,22 @@ interface Todos {
 
 function Todo({display, handleChangeDisplay}: Props) {
     const [todo, setTodo] = useState('')
-    const [todos, setTodos] =useState<Todos[]>([])
+    let [todos, setTodos] =useState<Todos[]>([])
 
     // set todo string value
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setTodos([...todos, {id: Date.now(), task: todo, isDone: false}])
         setTodo('')
+    }
+    // delete task
+    const handleDeleteTask = (value: number) => {
+        for(let c = 0; c < todos.length; c++){
+            if(todos[c].id == value){
+                todos.splice(c, 1)
+                setTodos([...todos])
+            }
+        }
     }
     // show todos array when the array state finish
     useEffect(() => {
@@ -37,7 +46,11 @@ function Todo({display, handleChangeDisplay}: Props) {
                 </div>
             </S.Header>
             <section>
-                {todos.map(todo => <li>{todo.task}</li> )}
+                {todos.map(obj => 
+                <li key={obj.id}>
+                {obj.task}
+                <button onClick={() => {handleDeleteTask(obj.id)}}>DEL</button>
+                </li> )}
             </section>
             <main>
                 <form onSubmit={handleSubmit}>
