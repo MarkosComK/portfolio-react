@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
 interface Props {
-    display: boolean
+    display: boolean,
 }
-
+interface Task {
+    taskDisplay: boolean
+}
+interface Done {
+    done:boolean
+}
 export const Todo = styled.div<Props>`
     display: ${props => props.display ? "grid" : "none"};
     grid-template-columns: 1fr;
@@ -23,6 +28,25 @@ export const Todo = styled.div<Props>`
     border-radius: 14px;
     section{
         margin: 10px 10px;
+        overflow: auto;
+        height: 100%;
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 100%;
+            list-style: none;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            border-radius: 10px;
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-bg);
+            border-radius: 10px;
+        }
     }
     form{
         display: flex;
@@ -43,6 +67,10 @@ export const Todo = styled.div<Props>`
             margin: 0 10px;
             box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
             color: var(--font-color);
+
+            &:focus{
+                outline: none;
+            }
         }
         button{
             position: absolute;
@@ -59,4 +87,16 @@ export const Header = styled.header`
     border-bottom: 1px solid var(--border-color);
     padding: 0 10px;
     white-space: nowrap;
+`
+export const TaskDone = styled.div<Done>`
+    text-decoration: ${props => props.done ? "underline dotted var(--green-btn)" : "none"};
+`
+
+export const EditTask = styled.form<Task>`
+    input{
+        display: ${props => props.taskDisplay ? "block" : "none"};
+        position: relative;
+        left: 0;
+    }
+
 `

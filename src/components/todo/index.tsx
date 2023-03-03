@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import * as S from './style'
 import * as B from '../styles/styledButtons'
-
+import trashIcon from '../assets/trash-icon.png'
+import checkIcon from '../assets/check-icon.png'
 interface Props {
     display: boolean,
     handleChangeDisplay: (value: number) => void
@@ -9,19 +10,45 @@ interface Props {
 
 interface Todos {
     id: number,
-    task: string,
+    task: string | boolean,
     isDone: boolean
 }
 
+
+
 function Todo({display, handleChangeDisplay}: Props) {
     const [todo, setTodo] = useState('')
-    let [todos, setTodos] =useState<Todos[]>([])
-
+    const [todos, setTodos] = useState<Todos[]>([])
+    const [taskDisplay, setTaskDisplay] = useState(false)
+    const [taskIsDone, setTaskIsDone] = useState(false)
+    
     // set todo string value
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        setTodos([...todos, {id: Date.now(), task: todo, isDone: false}])
-        setTodo('')
+        if(todo == ''){
+            setTodo('You want to do nothing?')
+        } else {
+            setTodos([...todos, {id: Date.now(), task: todo, isDone: false}])
+            setTodo('')
+        }
+    }
+    // edit task (in progress)
+    // const handleEditTask = (value: number) => {
+    //     for(let c = 0; c < todos.length; c++){
+    //         if(todos[c].id == value){
+    //             todos[c].task = false
+    //             setTodos([...todos])
+    //         }
+    //     }
+    // }
+    // set task as Done
+    const handleIsDone = (value: number) => {
+        for(let c = 0; c < todos.length; c++){
+            if(todos[c].id == value){
+                todos[c].isDone = true
+                setTodos([...todos])
+            }
+        }
     }
     // delete task
     const handleDeleteTask = (value: number) => {
@@ -48,15 +75,20 @@ function Todo({display, handleChangeDisplay}: Props) {
             <section>
                 {todos.map(obj => 
                 <li key={obj.id}>
-                {obj.task}
-                <button onClick={() => {handleDeleteTask(obj.id)}}>DEL</button>
+                <S.TaskDone done={taskIsDone}>
+                    {obj.task}
+                </S.TaskDone>
+                <div>
+                    <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
+                    <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
+                </div>
                 </li> )}
             </section>
             <main>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='Enter a task'
                     value={todo}
-                    onChange={(e) => setTodo(e.target.value)}
+                    onChange={(e) => {setTodo(e.target.value)}}
                     />
                     <button type='submit'>Go</button>
                 </form>
