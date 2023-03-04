@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import * as S from './style'
 import * as B from '../styles/styledButtons'
-import trashIcon from '../assets/trash-icon.png'
-import checkIcon from '../assets/check-icon.png'
+import SingleTodo from './SingleTodo'
+
 interface Props {
     display: boolean,
     handleChangeDisplay: (value: number) => void
@@ -72,18 +72,10 @@ function Todo({display, handleChangeDisplay}: Props) {
                     <B.GButton/>
                 </div>
             </S.Header>
-            <section>
-                {todos.map(obj => 
-                <li key={obj.id}>
-                <S.TaskDone done={taskIsDone}>
-                    {obj.task}
-                </S.TaskDone>
-                <div>
-                    <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
-                    <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
-                </div>
-                </li> )}
-            </section>
+            <SingleTodo 
+            todos={todos} 
+            handleIsDone={handleIsDone}
+            handleDeleteTask={handleDeleteTask}/>
             <main>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='Enter a task'
