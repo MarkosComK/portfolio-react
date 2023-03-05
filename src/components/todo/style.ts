@@ -3,12 +3,7 @@ import styled from "styled-components";
 interface Props {
     display: boolean,
 }
-interface Task {
-    taskDisplay: boolean
-}
-interface Done {
-    done:boolean
-}
+
 export const Todo = styled.div<Props>`
     display: ${props => props.display ? "grid" : "none"};
     grid-template-columns: 1fr;
@@ -29,7 +24,7 @@ export const Todo = styled.div<Props>`
     section{
         margin: 10px 10px;
         overflow: auto;
-        height: 100%;
+        height: 96%;
         li{
             display: flex;
             justify-content: space-between;
@@ -37,6 +32,9 @@ export const Todo = styled.div<Props>`
 
             width: 100%;
             list-style: none;
+            span{
+                text-decoration: line-through;
+            }
         }
         ::-webkit-scrollbar {
             width: 6px;
@@ -87,16 +85,4 @@ export const Header = styled.header`
     border-bottom: 1px solid var(--border-color);
     padding: 0 10px;
     white-space: nowrap;
-`
-export const TaskDone = styled.div<Done>`
-    text-decoration: ${props => props.done ? "underline dotted var(--green-btn)" : "none"};
-`
-
-export const EditTask = styled.form<Task>`
-    input{
-        display: ${props => props.taskDisplay ? "block" : "none"};
-        position: relative;
-        left: 0;
-    }
-
 `

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import * as S from './style'
 import * as B from '../styles/styledButtons'
-import SingleTodo from './SingleTodo'
+import trashIcon from '../assets/trash-icon.png'
+import checkIcon from '../assets/check-icon.png'
 
 interface Props {
     display: boolean,
@@ -19,8 +20,6 @@ interface Todos {
 function Todo({display, handleChangeDisplay}: Props) {
     const [todo, setTodo] = useState('')
     const [todos, setTodos] = useState<Todos[]>([])
-    const [taskDisplay, setTaskDisplay] = useState(false)
-    const [taskIsDone, setTaskIsDone] = useState(false)
     
     // set todo string value
     const handleSubmit = (e: React.FormEvent) => {
@@ -72,13 +71,35 @@ function Todo({display, handleChangeDisplay}: Props) {
                     <B.GButton/>
                 </div>
             </S.Header>
-            <SingleTodo 
-            todos={todos} 
-            handleIsDone={handleIsDone}
-            handleDeleteTask={handleDeleteTask}/>
+            <section>
+                {todos.map(obj => {
+                    if(obj.isDone){
+                        return (
+                            <li key={obj.id}> 
+                            <span>{obj.task}</span>
+                            <div>
+                                <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
+                                <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
+                            </div>
+                            </li> 
+                        )
+                    } else {
+                        return (
+                            <li key={obj.id}> 
+                            {obj.task}
+                            <div>
+                                <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
+                                <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
+                            </div>
+                            </li> 
+                        )
+                }
+                
+                } )}
+            </section>
             <main>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder='Enter a task'
+                    <input type="text" placeholder='Enter a task' maxLength={27}
                     value={todo}
                     onChange={(e) => {setTodo(e.target.value)}}
                     />
