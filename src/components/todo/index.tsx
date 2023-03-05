@@ -44,11 +44,7 @@ function Todo({display, handleChangeDisplay}: Props) {
     const handleIsDone = (value: number) => {
         for(let c = 0; c < todos.length; c++){
             if(todos[c].id == value){
-                if(todos[c].isDone){
-                    todos[c].isDone = false
-                } else {
-                    todos[c].isDone = true
-                }
+                    todos[c].isDone = !todos[c].isDone
                 setTodos([...todos])
             }
         }

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import { Nav } from "./style"
 import finderIcon from "../assets/finder-icon.png"
 import safariIcon from "../assets/safari-icon.png"
@@ -14,7 +14,7 @@ interface Props {
 
 function TaskBar({handleChangeDisplay}: Props){
     const [hovered, setHovered] = useState({ calculator: false })
-    
+
     // create an array with the taskbar elements
     const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
 
