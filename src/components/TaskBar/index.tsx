@@ -14,11 +14,11 @@ interface Props {
 
 function TaskBar({handleChangeDisplay}: Props){
     const [hovered, setHovered] = useState({ calculator: false })
-    const [hover, setHover] = useState(false)
+    
     // create an array with the taskbar elements
     const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
-    useEffect(() => {
-        // runs code below just if there`s something inside icons to avoid console errors
+
+    function addEventListenersToIcons() {
         if (icons && icons.length > 0) {
           icons.forEach((item, index) => {
             item.addEventListener('mouseover', (e) => focus(e.target as HTMLElement, index))
@@ -31,7 +31,10 @@ function TaskBar({handleChangeDisplay}: Props){
             })
           })
         }
-      }, [hover])
+      }
+      
+      addEventListenersToIcons();
+      
       function focus(target: HTMLElement, index: number) {
         let next: number = index + 1
         let previous: number = index - 1
@@ -50,7 +53,7 @@ function TaskBar({handleChangeDisplay}: Props){
 
     return(
         <Nav>
-            <ul onMouseOver={() => setHover(true)}>
+            <ul>
                 <li><img id="navbarIcon" src={finderIcon} alt="" /></li>
                 <li><img id="navbarIcon" src={safariIcon} alt="" /></li>
                 <li>

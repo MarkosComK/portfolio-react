@@ -31,7 +31,29 @@ export const Todo = styled.div<Props>`
             align-items: center;
 
             width: 100%;
+            height: 30px;
             list-style: none;
+
+            /* Glass effect */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border-radius: 5px;
+            margin-top: 3px;
+            padding: 5px;
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button{
+                    width: 20px;
+                    height: 20px;
+                    &:nth-child(2){
+                        position: relative;
+                        top: -1px;
+                    }
+                }
+            }
             span{
                 text-decoration: line-through;
             }

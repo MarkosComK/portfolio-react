@@ -77,20 +77,20 @@ function Todo({display, handleChangeDisplay}: Props) {
                         return (
                             <li key={obj.id}> 
                             <span>{obj.task}</span>
-                            <div>
-                                <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
-                                <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
-                            </div>
+                                <div>
+                                    <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
+                                    <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
+                                </div>
                             </li> 
                         )
                     } else {
                         return (
                             <li key={obj.id}> 
                             {obj.task}
-                            <div>
-                                <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
-                                <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
-                            </div>
+                                <div>
+                                    <button onClick={() => {handleIsDone(obj.id)}} ><img src={checkIcon} alt="check-button" /></button>
+                                    <button onClick={() => {handleDeleteTask(obj.id)}} ><img src={trashIcon} alt="trash-button" /></button>
+                                </div>
                             </li> 
                         )
                 }
