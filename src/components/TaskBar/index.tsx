@@ -20,20 +20,20 @@ function TaskBar({handleChangeDisplay}: Props){
     useEffect(() => {
         if (icons && icons.length > 0) {
           icons.forEach((item, index) => {
-            item.addEventListener('mouseover', (e) => focus(e.target as HTMLElement, index));
+            item.addEventListener('mouseover', (e) => focus(e.target as HTMLElement, index))
             item.addEventListener('mouseleave', () => {
               icons.forEach((item) => {
                 if (item.style) {
-                  item.style.transform = "scale(1) translateY(0px)";
+                  item.style.transform = "scale(1) translateY(0px)"
                 }
-              });
-            });
-          });
+              })
+            })
+          })
         }
-      }, [hover]);
+      }, [hover])
       function focus(target: HTMLElement, index: number) {
-        let next: number = index + 1;
-        let previous: number = index - 1;
+        let next: number = index + 1
+        let previous: number = index - 1
 
         if(index === 0){
             target.style.transform = "scale(1.3) translateY(-10px)"
