@@ -58,10 +58,6 @@ function Todo({display, handleChangeDisplay}: Props) {
             }
         }
     }
-    // show todos array when the array state finish
-    useEffect(() => {
-        console.log(todos)
-      }, [todos])
     return (
         <S.Todo display={display}>
             <S.Header>

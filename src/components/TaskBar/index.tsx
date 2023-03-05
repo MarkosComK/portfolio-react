@@ -18,6 +18,7 @@ function TaskBar({handleChangeDisplay}: Props){
     // create an array with the taskbar elements
     const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
     useEffect(() => {
+        // runs code below just if there`s something inside icons to avoid console errors
         if (icons && icons.length > 0) {
           icons.forEach((item, index) => {
             item.addEventListener('mouseover', (e) => focus(e.target as HTMLElement, index))
