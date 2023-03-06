@@ -14,6 +14,7 @@ interface Props {
 
 function TaskBar({handleChangeDisplay}: Props){
     const [hovered, setHovered] = useState({ calculator: false })
+    const [load, setLoad] = useState(false)
 
     // create an array with the taskbar elements
     const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
@@ -54,7 +55,7 @@ function TaskBar({handleChangeDisplay}: Props){
 
     return(
         <Nav>
-            <ul>
+            <ul onMouseOver={() => setLoad(true)}>
                 <li><img id="navbarIcon" src={finderIcon} alt="" /></li>
                 <li><img id="navbarIcon" src={safariIcon} alt="" /></li>
                 <li>
