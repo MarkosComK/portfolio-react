@@ -18,22 +18,22 @@ function TaskBar({handleChangeDisplay}: Props){
     // create an array with the taskbar elements
     const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
 
-    function addEventListenersToIcons() {
+    const addEventListenersToIcons = () => {
         if (icons && icons.length > 0) {
           icons.forEach((item, index) => {
-            item.addEventListener('mouseover', (e) => focus(e.target as HTMLElement, index))
-            item.addEventListener('mouseleave', () => {
+            item.onmouseover = (e) => focus(e.target  as HTMLElement, index)
+            item.onmouseout = () => {
               icons.forEach((item) => {
                 if (item.style) {
                   item.style.transform = "scale(1) translateY(0px)"
                 }
               })
-            })
+            }
           })
         }
       }
       
-      addEventListenersToIcons();
+      addEventListenersToIcons()
       
       function focus(target: HTMLElement, index: number) {
         let next: number = index + 1
@@ -50,6 +50,7 @@ function TaskBar({handleChangeDisplay}: Props){
             icons[next].style.transform = "scale(1.2) translateY(-6px)"
         }
       }
+
 
     return(
         <Nav>
