@@ -3,7 +3,8 @@ import GlobalStyle from "./styles/global"
 import VideoBackground from "./components/VideoBackground"
 import TaskBar from "./components/TaskBar"
 import Calculator from "./components/Calculator";
-import Todo from "./components/todo";
+import Todo from "./components/Todo";
+import MoveWindow from "./components/MoveWindow";
 
 function App() {
   // set the Apps display for true or false
@@ -28,7 +29,7 @@ function App() {
       <header>
       </header>
       <main>
-        <Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>
+        <MoveWindow initialX={50} initialY={50} children={<Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>}/>
         <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
       </main>
       <TaskBar handleChangeDisplay={handleChangeDisplay}/>

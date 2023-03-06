@@ -18,9 +18,6 @@ export const Calculator = styled.div<Props>`
     /* Glass effect */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-
-    top: 50px;
-    left: 50px;
 `
 export const Header = styled.header`
     display: flex;
