@@ -31,11 +31,11 @@ function MoveWindow({ initialX, initialY, children }: Props) {
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if(isDragging){
-            const dx = e.clientX - mousePrev.current.x
-            const dy = e.clientY - mousePrev.current.y
+            const divx = e.clientX - mousePrev.current.x
+            const divy = e.clientY - mousePrev.current.y
             setPosition((prevPosition) => ({
-                x: prevPosition.x + dx,
-                y: prevPosition.y + dy
+                x: prevPosition.x + divx,
+                y: prevPosition.y + divy
             }))
             mousePrev.current = { x: e.clientX, y: e.clientY }
         } 
