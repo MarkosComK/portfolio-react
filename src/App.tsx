@@ -4,6 +4,7 @@ import VideoBackground from "./components/VideoBackground"
 import TaskBar from "./components/TaskBar"
 import Calculator from "./components/Calculator";
 import Todo from "./components/Todo";
+import Finder from './components/Finder'
 import MoveWindow from "./components/MoveWindow";
 import { SmallDevices } from "./style";
 
@@ -51,6 +52,7 @@ function App() {
         <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
         }
         />
+        <Finder />
       </main>
       <TaskBar handleChangeDisplay={handleChangeDisplay}/>
       <SmallDevices>THIS WEBSITE IT`S IN PROGRESS. SMALL DEVICES VERSION COMING SOON</SmallDevices>
