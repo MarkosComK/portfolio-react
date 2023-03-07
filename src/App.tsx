@@ -5,6 +5,7 @@ import TaskBar from "./components/TaskBar"
 import Calculator from "./components/Calculator";
 import Todo from "./components/Todo";
 import MoveWindow from "./components/MoveWindow";
+import { SmallDevices } from "./style";
 
 function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min;
@@ -27,9 +28,8 @@ function App() {
   }
   
   // generate random values to display the apps on the screen
-  const width = getRandomArbitrary(50, windowSize.current[0]-(windowSize.current[0]/100*20))
-  const height = getRandomArbitrary(50, windowSize.current[1]-(windowSize.current[1]/100*50))
-
+  const percent20: number = windowSize.current[0]/100*20
+  const percent50: number = windowSize.current[1]/100*50
   return (
     <div>
       <VideoBackground />
@@ -37,10 +37,23 @@ function App() {
       <header>
       </header>
       <main>
-        <MoveWindow initialX={width} initialY={height} children={<Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>}/>
-        <MoveWindow initialX={100} initialY={100} children={<Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />}/>
+        <MoveWindow 
+        initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
+        initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
+        children={
+        <Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>
+        }
+        />
+        <MoveWindow 
+        initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
+        initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
+        children={
+        <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
+        }
+        />
       </main>
       <TaskBar handleChangeDisplay={handleChangeDisplay}/>
+      <SmallDevices>THIS WEBSITE IT`S IN PROGRESS. SMALL DEVICES VERSION COMING SOON</SmallDevices>
     </div>
   );
 }

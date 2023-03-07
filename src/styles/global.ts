@@ -50,5 +50,5 @@ export default createGlobalStyle`
         /* border radius */
         border-radius: 14px;
     }
-
-`
+    
+    `

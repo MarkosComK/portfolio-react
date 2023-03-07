@@ -11,9 +11,6 @@ export const Todo = styled.div<Props>`
     position: absolute;
     width: 300px;
     height: 400px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     background-color: var(--theme-bg-color);
     color: var(--font-color);
     
