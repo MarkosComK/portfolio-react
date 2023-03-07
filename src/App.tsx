@@ -8,7 +8,7 @@ import MoveWindow from "./components/MoveWindow";
 import { SmallDevices } from "./style";
 
 function getRandomArbitrary(min: number, max: number) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min) 
 }
 
 function App() {
