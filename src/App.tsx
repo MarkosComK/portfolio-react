@@ -27,8 +27,8 @@ function App() {
   }
   
   // generate random values to display the apps on the screen
-  const width = getRandomArbitrary(50, windowSize.current[0]-400)
-  const height = getRandomArbitrary(50, windowSize.current[1]-400)
+  const width = getRandomArbitrary(50, windowSize.current[0]-(windowSize.current[0]/100*20))
+  const height = getRandomArbitrary(50, windowSize.current[1]-(windowSize.current[1]/100*50))
 
   return (
     <div>
