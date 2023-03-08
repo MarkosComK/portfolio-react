@@ -7,7 +7,6 @@ export default createGlobalStyle`
         box-sizing: border-box;
         scroll-behavior: smooth;
         font-family: "Roboto";
-        color: var(--font-color);
     }
 
     button, input[type="submit"], input[type="reset"] {
@@ -23,6 +22,7 @@ export default createGlobalStyle`
     html{
         overflow-y: hidden;
         overflow-x: hidden;
+        color: var(--font-color);
     }
 
     :root {

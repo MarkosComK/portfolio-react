@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Finder = styled.div`
-    display: flex;
+    display: none;
     position: absolute;
     border: 1px solid rgb(54, 54, 54);
     width: 800px;
@@ -73,6 +73,11 @@ export const FinderButtons = styled.div`
 export const Favorites = styled.div`
     width: 118px;
     height: 183px;
+    header{
+            height: 13px;
+            font-size: 11px;
+            color: #888888;
+    }
     li{
         display: flex;
         align-items: center;
@@ -91,7 +96,6 @@ export const Favorites = styled.div`
     }
 `
 export const Drive = styled.div`
-    border: 1px solid red;
     height: 45px;
     position: relative;
     left: -30px;
@@ -100,6 +104,7 @@ export const Drive = styled.div`
         header{
             height: 13px;
             font-size: 11px;
+            color: #888888;
         }
     }
 `

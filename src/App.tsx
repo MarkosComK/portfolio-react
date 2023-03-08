@@ -41,6 +41,7 @@ function App() {
         <MoveWindow 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
+        width={200} //set the width of the draggable area
         children={
         <Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>
         }
@@ -48,6 +49,7 @@ function App() {
         <MoveWindow 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
+        width={230}
         children={
         <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
         }

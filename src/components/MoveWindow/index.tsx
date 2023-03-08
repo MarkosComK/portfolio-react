@@ -4,6 +4,7 @@ import * as S from './style'
 interface Props {
   initialX: number,
   initialY: number,
+  width: number,
   children: JSX.Element
 }
 
@@ -12,7 +13,7 @@ interface Position {
     y: number
 }
 
-function MoveWindow({ initialX, initialY, children }: Props) {
+function MoveWindow({ initialX, initialY, width, children }: Props) {
     const [isDragging, setIsDragging] = useState(false)
     const [position, setPosition] = useState<Position>({ x: initialX, y: initialY })
     const mouseStart = useRef<Position>({ x: 0, y: 0 });
@@ -45,11 +46,12 @@ function MoveWindow({ initialX, initialY, children }: Props) {
         <S.MovableWindow
             top={position.y}
             left={position.x}
-        >
+            >
             <S.Header 
                 onMouseDown={handleDragOn}
                 onMouseUp={handleDragOff}
                 onMouseMove={handleMouseMove}
+                width={width}
             >
             </S.Header>
             {children}
