@@ -169,4 +169,56 @@ export const FinderMain = styled.main`
     padding: 20px;
     text-align: center;
     margin-top: 50px;
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: rgba(30, 30, 30, 0);
+    }
+
+    &::-webkit-scrollbar {
+        width: 12px;
+        background-color: rgba(30, 30, 30, 0);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #313131;
+    }
+`
+export const ProfileWrap = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+`
+
+export const TextWrap = styled.div`
+    text-align: center;
+    p{
+        margin: 48px 0;
+    }
+`
+
+export const Work = styled.div`
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+`
+
+export const Folder = styled.div`
+    width: 120px;
+    img{
+        width: 80px;
+    }
 `
