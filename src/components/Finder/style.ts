@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Finder = styled.div`
-    display: none;
+    display: flex;
     position: absolute;
     border: 1px solid rgb(54, 54, 54);
     width: 800px;
@@ -49,7 +49,7 @@ export const FinderSidebar = styled.div`
     height: 498px;
     background: rgba(50, 50, 50, 0.95);
     -webkit-backdrop-filter: blur(48px);
-            backdrop-filter: blur(48px);
+    backdrop-filter: blur(48px);
     border-radius: 10px 0px 0px 10px;
     display: flex;
     flex-direction: column;
@@ -97,14 +97,30 @@ export const Favorites = styled.div`
 `
 export const Drive = styled.div`
     height: 45px;
-    position: relative;
-    left: -30px;
+    width: 118px;
     ul{
         list-style-type: none;
         header{
             height: 13px;
             font-size: 11px;
             color: #888888;
+        }
+        li{
+            display: flex;
+            align-items: center;
+            height: 28px;
+            border-radius: 7px;
+            background-color: rgba(50, 50, 50, 0.95);
+            font-size: 13px;
+            letter-spacing: 1px;
+            width: 110px;
+            img{
+                margin: 8px 6px 6px 6px;
+            }
+            &:hover{
+                cursor: pointer;
+                filter: brightness(150%);
+            }
         }
     }
 `
@@ -113,11 +129,35 @@ export const FolderSize = styled.div`
     height: 157px;
     header{
         height: 13px;
+        font-size: 11px;
+        color: #888888;
     }
     ul{
         list-style-type: none;
+        button{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            left: 1px;
+        }
         li{
+            display: flex;
+            align-items: center;
+            height: 28px;
+            border-radius: 7px;
+            background-color: rgba(50, 50, 50, 0.95);
+            font-size: 13px;
+            letter-spacing: 1px;
             padding-left: 10px;
+            width: 110px;
+            img{
+                margin: 8px 6px 6px 6px;
+            }
+            &:hover{
+                cursor: pointer;
+                filter: brightness(150%);
+            }
         }
     }
 `
