@@ -16,6 +16,7 @@ function App() {
   // set the Apps display for true or false
   const [calculatorDisplay, setCalculatorDisplay] = useState<boolean>(false)
   const [todoDisplay, setTodoDisplay] = useState<boolean>(false)
+  const [finderDisplay, setFinderDisplay] = useState<boolean>(false)
   const windowSize = useRef([window.innerWidth, window.innerHeight])
 
   function handleChangeDisplay(value: number) {
@@ -25,6 +26,9 @@ function App() {
         break
       case 2:
         todoDisplay ? setTodoDisplay(false) : setTodoDisplay(true)
+        break
+      case 3:
+        finderDisplay ? setFinderDisplay(false) : setFinderDisplay(true)
     }
   }
   
@@ -54,7 +58,14 @@ function App() {
         <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
         }
         />
-        <Finder />
+        <MoveWindow 
+        initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
+        initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
+        width={740}
+        children={
+        <Finder display={finderDisplay} handleChangeDisplay={handleChangeDisplay}/>
+        }
+        />
       </main>
       <TaskBar handleChangeDisplay={handleChangeDisplay}/>
       <SmallDevices>THIS WEBSITE IT`S IN PROGRESS. SMALL DEVICES VERSION COMING SOON</SmallDevices>

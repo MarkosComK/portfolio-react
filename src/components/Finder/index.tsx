@@ -11,9 +11,14 @@ import documentsIcon from './finder-icons/documents.png'
 import downloadsIcon from './finder-icons/downloads.png'
 import driveIcon from './finder-icons/drive.png'
 
-function Finder() {
+interface Props {
+    display: boolean,
+    handleChangeDisplay: (value: number) => void
+}
+
+function Finder({display, handleChangeDisplay}: Props) {
   return (
-    <S.Finder>
+    <S.Finder display={display}>
       <S.Header>
         <div>
             <img src={leftArrow} alt="" />
@@ -27,7 +32,7 @@ function Finder() {
       <section>
         <S.FinderSidebar>
             <S.FinderButtons>
-                    <B.RButton></B.RButton>
+                    <B.RButton onClick={() => handleChangeDisplay(3)}></B.RButton>
                     <B.YButton></B.YButton>
                     <B.GButton></B.GButton>
             </S.FinderButtons>
@@ -66,7 +71,9 @@ function Finder() {
             </div>
         </S.FinderSidebar>
       </section>
-      <main></main>
+      <S.FinderMain>
+        
+      </S.FinderMain>
     </S.Finder>
   )
 }

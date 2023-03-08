@@ -18,6 +18,7 @@ export const MovableWindow = styled.div<Props>`
 
 export const Header = styled.header<Area>`
     width: ${props => `${props.width}px`};
+
     position: relative;
     cursor: pointer;
     height: 35px;

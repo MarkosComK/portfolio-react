@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-export const Finder = styled.div`
-    display: flex;
+interface Props {
+    display: boolean
+}
+
+export const Finder = styled.div<Props>`
+    display: ${props => props.display ? "flex" : "none"};
     position: absolute;
     border: 1px solid rgb(54, 54, 54);
     width: 800px;
     height: 500px;
-    left: 400px;
-    top: 50px;
     background: #1E1E1E;
     border-radius: 10px;
     section{
@@ -36,8 +38,8 @@ export const Header = styled.header`
                 margin: 0 15px;
             }
         }
-        &:nth-child(2){ /* select search */
-            img{
+        &:nth-child(3){ /* select search */
+        img{
                 margin: 0 30px;
             }
         }
@@ -160,4 +162,11 @@ export const FolderSize = styled.div`
             }
         }
     }
+`
+
+export const FinderMain = styled.main`
+    overflow: auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
 `

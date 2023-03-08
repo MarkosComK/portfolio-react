@@ -13,7 +13,6 @@ interface Props {
 
 
 function TaskBar({handleChangeDisplay}: Props){
-    const [hovered, setHovered] = useState({ calculator: false })
     const [load, setLoad] = useState(false)
 
     // create an array with the taskbar elements
@@ -56,13 +55,13 @@ function TaskBar({handleChangeDisplay}: Props){
     return(
         <Nav>
             <ul onMouseOver={() => setLoad(true)}>
-                <li><img id="navbarIcon" src={finderIcon} alt="" /></li>
+                <li><img id="navbarIcon" src={finderIcon} alt="" 
+                onClick={() => handleChangeDisplay(3)}
+                /></li>
                 <li><img id="navbarIcon" src={safariIcon} alt="" /></li>
                 <li>
                     <img id="navbarIcon" src={calculatorIcon} 
                     onClick={() => handleChangeDisplay(1)} 
-                    onMouseEnter={() => {setHovered({calculator: true})}} 
-                    onMouseLeave={() => {setHovered({calculator: false})}} 
                     alt="" />
                 </li>
                 <li>
