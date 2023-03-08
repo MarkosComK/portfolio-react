@@ -48,7 +48,7 @@ function MoveWindow({ initialX, initialY, width, handleCalculatorFocus, zIndex, 
         <S.MovableWindow
             top={position.y}
             left={position.x}
-            onClick={handleCalculatorFocus}
+            onMouseDown={handleCalculatorFocus}
             >
             <S.Header 
                 onMouseDown={handleDragOn}

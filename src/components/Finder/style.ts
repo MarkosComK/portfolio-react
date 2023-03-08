@@ -215,6 +215,7 @@ export const Work = styled.div`
     a{
         text-decoration: none;
         color: #fff;
+        height: 80px; //same size of the folder
     }
 `
 
