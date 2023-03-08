@@ -3,12 +3,13 @@ import * as B from '../styles/styledButtons'
 import { useState } from 'react'
 
 interface Props {
-    display: boolean
+    display: boolean,
+    zIndex: number,
     handleChangeDisplay: (value: number) => void
 }
 
 
-function Calculator({display, handleChangeDisplay}: Props){
+function Calculator({display, zIndex, handleChangeDisplay}: Props){
 
     // set first value
     let [firstValue,  setFirstValue] = useState('')
@@ -100,7 +101,7 @@ function Calculator({display, handleChangeDisplay}: Props){
     }
 
     return(
-        <S.Calculator display={display}>
+        <S.Calculator display={display} zIndex={zIndex}>
             <S.Header>
                 <div>
                     <B.RButton onClick={() => handleChangeDisplay(1)}></B.RButton>

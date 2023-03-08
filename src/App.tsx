@@ -19,6 +19,28 @@ function App() {
   const [finderDisplay, setFinderDisplay] = useState<boolean>(false)
   const windowSize = useRef([window.innerWidth, window.innerHeight])
 
+  // set the zIndex of the app 
+  const [calculatorIndex, setCalculatorIndex] = useState<number>(0)
+  const [todoIndex, setTodoIndex] = useState<number>(0)
+  const [finderIndex, setFinderIndex] = useState<number>(0)
+
+  const handleCalculatorFocus = () => {
+    setCalculatorIndex(10)
+    setTodoIndex(0)
+    setFinderIndex(0)
+  }
+  const handleTodoFocus = () => {
+    setCalculatorIndex(0)
+    setTodoIndex(10)
+    setFinderIndex(0)
+  }
+  const handleFinderFocus = () => {
+    setCalculatorIndex(0)
+    setTodoIndex(0)
+    setFinderIndex(10)
+  }
+
+
   function handleChangeDisplay(value: number) {
     switch(value){
       case 1:
@@ -46,24 +68,30 @@ function App() {
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
         width={200} //set the width of the draggable area
+        handleCalculatorFocus={handleCalculatorFocus}
+        zIndex={calculatorIndex}
         children={
-        <Calculator display={calculatorDisplay} handleChangeDisplay={handleChangeDisplay}/>
+        <Calculator display={calculatorDisplay} zIndex={calculatorIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
         <MoveWindow 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
         width={230}
+        handleCalculatorFocus={handleTodoFocus}
+        zIndex={todoIndex}
         children={
-        <Todo display={todoDisplay} handleChangeDisplay={handleChangeDisplay} />
+        <Todo display={todoDisplay} zIndex={todoIndex} handleChangeDisplay={handleChangeDisplay} />
         }
         />
         <MoveWindow 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
         width={740}
+        handleCalculatorFocus={handleFinderFocus}
+        zIndex={finderIndex}
         children={
-        <Finder display={finderDisplay} handleChangeDisplay={handleChangeDisplay}/>
+        <Finder display={finderDisplay} zIndex={finderIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
       </main>

@@ -5,15 +5,15 @@ interface Props {
     left: number,
 }
 interface Area {
-    width: number
+    width: number,
+    zIndex: number
 }
 export const MovableWindow = styled.div<Props>`
     position: absolute;
     top: ${props => `${props.top}px`};
     left: ${props => `${props.left}px`};
 
-    height: 400px;
-    width: 270px;
+
     `
 
 export const Header = styled.header<Area>`
@@ -24,5 +24,5 @@ export const Header = styled.header<Area>`
     height: 35px;
     top: 35px;
     left: 64px;
-    z-index: 2;
+    z-index: ${props => props.zIndex+1};
 `

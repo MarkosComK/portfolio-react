@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 interface Props {
-    display: boolean
+    display: boolean,
+    zIndex: number
 }
 
 export const Finder = styled.div<Props>`
@@ -12,6 +13,7 @@ export const Finder = styled.div<Props>`
     height: 500px;
     background: #1E1E1E;
     border-radius: 10px;
+    z-index: ${props => props.zIndex};
     section{
         div:nth-child(2){ /**select the div below <S.FinderButtons> */
             display: flex;

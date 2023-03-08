@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 interface Props {
-    display: boolean
+    display: boolean,
+    zIndex: number
 }
 
 export const Calculator = styled.div<Props>`
@@ -14,6 +15,7 @@ export const Calculator = styled.div<Props>`
     height: 400px;
     width: 270px;
     border-radius: 14px;
+    z-index: ${props => props.zIndex};
 
     /* Glass effect */
     backdrop-filter: blur(20px);

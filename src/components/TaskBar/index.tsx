@@ -42,7 +42,7 @@ function TaskBar({handleChangeDisplay}: Props){
         if(index === 0){
             target.style.transform = "scale(1.3) translateY(-10px)"
         } 
-        else if(next == icons.length){
+        else if(next === icons.length){
             icons[index].style.transform = "scale(1.3) translateY(-10px)"
         } else {
             icons[previous].style.transform = "scale(1.2) translateY(-6px)"
