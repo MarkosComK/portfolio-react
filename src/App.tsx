@@ -68,7 +68,7 @@ function App() {
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
         width={200} //set the width of the draggable area
-        handleCalculatorFocus={handleCalculatorFocus}
+        handleFocus={handleCalculatorFocus}
         zIndex={calculatorIndex}
         children={
         <Calculator display={calculatorDisplay} zIndex={calculatorIndex} handleChangeDisplay={handleChangeDisplay}/>
@@ -78,7 +78,7 @@ function App() {
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
         width={230}
-        handleCalculatorFocus={handleTodoFocus}
+        handleFocus={handleTodoFocus}
         zIndex={todoIndex}
         children={
         <Todo display={todoDisplay} zIndex={todoIndex} handleChangeDisplay={handleChangeDisplay} />
@@ -88,14 +88,19 @@ function App() {
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
         width={740}
-        handleCalculatorFocus={handleFinderFocus}
+        handleFocus={handleFinderFocus}
         zIndex={finderIndex}
         children={
         <Finder display={finderDisplay} zIndex={finderIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
       </main>
-      <TaskBar handleChangeDisplay={handleChangeDisplay}/>
+      <TaskBar 
+      handleChangeDisplay={handleChangeDisplay}
+      handleCalculatorFocus={handleCalculatorFocus}
+      handleTodoFocus={handleTodoFocus}
+      handleFinderFocus={handleFinderFocus}
+      />
       <SmallDevices>THIS WEBSITE IT`S IN PROGRESS. SMALL DEVICES VERSION COMING SOON</SmallDevices>
     </div>
   );

@@ -5,7 +5,7 @@ interface Props {
   initialX: number,
   initialY: number,
   width: number,
-  handleCalculatorFocus: () => void,
+  handleFocus: () => void,
   zIndex: number,
   children: JSX.Element
 }
@@ -15,7 +15,7 @@ interface Position {
     y: number
 }
 
-function MoveWindow({ initialX, initialY, width, handleCalculatorFocus, zIndex, children }: Props) {
+function MoveWindow({ initialX, initialY, width, handleFocus, zIndex, children }: Props) {
     const [isDragging, setIsDragging] = useState(false)
     const [position, setPosition] = useState<Position>({ x: initialX, y: initialY })
     const mouseStart = useRef<Position>({ x: 0, y: 0 });
@@ -48,7 +48,7 @@ function MoveWindow({ initialX, initialY, width, handleCalculatorFocus, zIndex, 
         <S.MovableWindow
             top={position.y}
             left={position.x}
-            onMouseDown={handleCalculatorFocus}
+            onMouseDown={handleFocus}
             >
             <S.Header 
                 onMouseDown={handleDragOn}

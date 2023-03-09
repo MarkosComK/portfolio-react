@@ -8,11 +8,14 @@ import mailIcon from "../assets/mail-icon.png"
 import todoIcon from "../assets/todo-icon.png"
 
 interface Props {
-    handleChangeDisplay: (value: number) => void
+    handleChangeDisplay: (value: number) => void,
+    handleCalculatorFocus: () => void,
+    handleTodoFocus: () => void
+    handleFinderFocus: () => void,
 }
 
 
-function TaskBar({handleChangeDisplay}: Props){
+function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, handleFinderFocus}: Props){
     const [load, setLoad] = useState(false)
 
     // create an array with the taskbar elements
@@ -56,18 +59,18 @@ function TaskBar({handleChangeDisplay}: Props){
         <Nav>
             <ul onMouseOver={() => setLoad(true)}>
                 <li><img id="navbarIcon" src={finderIcon} alt="" 
-                onClick={() => handleChangeDisplay(3)}
+                onClick={() => {handleChangeDisplay(3); handleFinderFocus()}}
                 /></li>
                 <li><img id="navbarIcon" src={safariIcon} alt="" /></li>
                 <li>
                     <img id="navbarIcon" src={calculatorIcon} 
-                    onClick={() => handleChangeDisplay(1)} 
+                    onClick={() => {handleChangeDisplay(1); handleCalculatorFocus()}} 
                     alt="" />
                 </li>
                 <li>
                     <img id="navbarIcon"
                     src={todoIcon} 
-                    onClick={() => handleChangeDisplay(2)}
+                    onClick={() => {handleChangeDisplay(2); handleTodoFocus()}}
                     alt="" />
                 </li>
                 <li>
