@@ -6,6 +6,7 @@ import calculatorIcon from "../assets/calculator-icon.png"
 import cameraIcon from "../assets/camera-icon.png"
 import mailIcon from "../assets/mail-icon.png"
 import todoIcon from "../assets/todo-icon.png"
+import weatherIcon from "../assets/weather-icon.png"
 
 interface Props {
     handleChangeDisplay: (value: number) => void,
@@ -74,7 +75,10 @@ function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, h
                     alt="" />
                 </li>
                 <li>
-                    <a href="mailto:markoscomks@gmail.com"><img id="navbarIcon" src={mailIcon} alt="" /></a>
+                  <a href=""><img id="navbarIcon" src={weatherIcon} alt="" /></a>
+                </li>
+                <li>
+                    <img id="navbarIcon" src={mailIcon} alt="" />
                 </li>
             </ul>
         </Nav>

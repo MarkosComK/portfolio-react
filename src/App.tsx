@@ -23,21 +23,19 @@ function App() {
   const [calculatorIndex, setCalculatorIndex] = useState<number>(0)
   const [todoIndex, setTodoIndex] = useState<number>(0)
   const [finderIndex, setFinderIndex] = useState<number>(0)
+  const [zIndex, setZindex] = useState<number>(1)
 
   const handleCalculatorFocus = () => {
-    setCalculatorIndex(10)
-    setTodoIndex(0)
-    setFinderIndex(0)
+    setCalculatorIndex(zIndex+1)
+    setZindex(zIndex + 1)
   }
   const handleTodoFocus = () => {
-    setCalculatorIndex(0)
-    setTodoIndex(10)
-    setFinderIndex(0)
+    setTodoIndex(zIndex)
+    setZindex(zIndex + 1)
   }
   const handleFinderFocus = () => {
-    setCalculatorIndex(0)
-    setTodoIndex(0)
-    setFinderIndex(10)
+    setFinderIndex(zIndex)
+    setZindex(zIndex + 1)
   }
 
 

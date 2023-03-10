@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface Props {
     display: boolean,
+    zIndex: number
 }
 
 export const Todo = styled.div<Props>`
@@ -13,7 +14,8 @@ export const Todo = styled.div<Props>`
     height: 400px;
     background-color: var(--theme-bg-color);
     color: var(--font-color);
-    
+    z-index: ${props => props.zIndex};
+
     /* Glass effect */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);

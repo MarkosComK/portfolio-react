@@ -6,6 +6,7 @@ import checkIcon from '../assets/check-icon.png'
 
 interface Props {
     display: boolean,
+    zIndex: number,
     handleChangeDisplay: (value: number) => void
 }
 
@@ -17,7 +18,7 @@ interface Todos {
 
 
 
-function Todo({display, handleChangeDisplay}: Props) {
+function Todo({display, zIndex, handleChangeDisplay}: Props) {
     const [todo, setTodo] = useState('')
     const [todos, setTodos] = useState<Todos[]>([])
     
@@ -59,7 +60,7 @@ function Todo({display, handleChangeDisplay}: Props) {
         }
     }
     return (
-        <S.Todo display={display}>
+        <S.Todo display={display} zIndex={zIndex}>
             <S.Header>
                 <div>
                     <B.RButton onClick={() => handleChangeDisplay(2)}/>
