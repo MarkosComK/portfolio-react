@@ -12,6 +12,8 @@ export const Todo = styled.div<Props>`
     position: absolute;
     width: 300px;
     height: 400px;
+
+    
     background-color: var(--theme-bg-color);
     color: var(--font-color);
     z-index: ${props => props.zIndex};

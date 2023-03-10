@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import * as S from './style'
 import * as B from '../styles/styledButtons'
 import trashIcon from '../assets/trash-icon.png'
@@ -25,7 +25,7 @@ function Todo({display, zIndex, handleChangeDisplay}: Props) {
     // set todo string value
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        if(todo == ''){
+        if(todo === ''){
             setTodo('You want to do nothing?')
         } else {
             setTodos([...todos, {id: Date.now(), task: todo, isDone: false}])
@@ -44,7 +44,7 @@ function Todo({display, zIndex, handleChangeDisplay}: Props) {
     // set task as Done
     const handleIsDone = (value: number) => {
         for(let c = 0; c < todos.length; c++){
-            if(todos[c].id == value){
+            if(todos[c].id === value){
                     todos[c].isDone = !todos[c].isDone
                 setTodos([...todos])
             }
@@ -53,7 +53,7 @@ function Todo({display, zIndex, handleChangeDisplay}: Props) {
     // delete task
     const handleDeleteTask = (value: number) => {
         for(let c = 0; c < todos.length; c++){
-            if(todos[c].id == value){
+            if(todos[c].id === value){
                 todos.splice(c, 1)
                 setTodos([...todos])
             }

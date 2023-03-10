@@ -11,12 +11,13 @@ import weatherIcon from "../assets/weather-icon.png"
 interface Props {
     handleChangeDisplay: (value: number) => void,
     handleCalculatorFocus: () => void,
-    handleTodoFocus: () => void
+    handleTodoFocus: () => void,
     handleFinderFocus: () => void,
+    handleWeatherFocus: () => void
 }
 
 
-function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, handleFinderFocus}: Props){
+function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, handleFinderFocus, handleWeatherFocus}: Props){
     const [load, setLoad] = useState(false)
 
     // create an array with the taskbar elements
@@ -59,14 +60,24 @@ function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, h
     return(
         <Nav>
             <ul onMouseOver={() => setLoad(true)}>
-                <li><img id="navbarIcon" src={finderIcon} alt="" 
-                onClick={() => {handleChangeDisplay(3); handleFinderFocus()}}
-                /></li>
-                <li><img id="navbarIcon" src={safariIcon} alt="" /></li>
                 <li>
-                    <img id="navbarIcon" src={calculatorIcon} 
+                  <img id="navbarIcon" 
+                  src={finderIcon} alt="" 
+                  onClick={() => {handleChangeDisplay(3); handleFinderFocus()}}
+                  />
+                </li>
+                <li>
+                  <img id="navbarIcon" 
+                  src={safariIcon} 
+                  alt="" 
+                  />
+                </li>
+                <li>
+                    <img id="navbarIcon" 
+                    src={calculatorIcon} 
                     onClick={() => {handleChangeDisplay(1); handleCalculatorFocus()}} 
-                    alt="" />
+                    alt="" 
+                    />
                 </li>
                 <li>
                     <img id="navbarIcon"
@@ -75,10 +86,13 @@ function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, h
                     alt="" />
                 </li>
                 <li>
-                  <a href=""><img id="navbarIcon" src={weatherIcon} alt="" /></a>
+                  <img id="navbarIcon" 
+                  src={weatherIcon} alt="" 
+                  onClick={() => {handleChangeDisplay(4); handleWeatherFocus()}}
+                  />
                 </li>
                 <li>
-                    <img id="navbarIcon" src={mailIcon} alt="" />
+                   <a href="mailto: markoscomks@gmail.com"><img id="navbarIcon" src={mailIcon} alt="" /></a> 
                 </li>
             </ul>
         </Nav>
