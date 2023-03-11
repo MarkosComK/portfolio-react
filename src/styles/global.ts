@@ -37,7 +37,7 @@ export default createGlobalStyle`
         --content-bg: rgb(146, 151, 179, 0.13);
         --button-inactive: rgb(249, 250, 251, 0.55);
         --dropdown-bg: #21242d;
-        --dropdown-hover: rgb(42 46 60);
+        --dropdown-hover: rgb(40 46 60);
         --popup-bg: rgb(22 25 37);
         --search-bg:  #14162b;
         --overlay-bg: rgba(36, 39, 59, 0.3);

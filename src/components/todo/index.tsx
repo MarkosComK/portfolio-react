@@ -64,8 +64,6 @@ function Todo({display, zIndex, handleChangeDisplay}: Props) {
             <S.Header>
                 <div>
                     <B.RButton onClick={() => handleChangeDisplay(2)}/>
-                    <B.YButton/>
-                    <B.GButton/>
                 </div>
             </S.Header>
             <section>

@@ -45,8 +45,6 @@ function Finder({display, zIndex, handleChangeDisplay}: Props) {
         <S.FinderSidebar>
             <S.FinderButtons>
                     <B.RButton onClick={() => handleChangeDisplay(3)}></B.RButton>
-                    <B.YButton></B.YButton>
-                    <B.GButton></B.GButton>
             </S.FinderButtons>
             <div>
                 <S.Favorites>
@@ -98,7 +96,7 @@ function showContent(value: string){
     if(value === "about"){
         return (
             <div>
-                <h1>Hello, my name is Markos and i am a front-end developer.</h1>
+                <h1>Hey, are you looking for a front end Web-Developer?</h1>
                 <S.ProfileWrap>
                     <img src={profileImg} alt="" />
                     <div>

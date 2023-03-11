@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const Weather = styled.div<Props>`
-    display: ${props => props.display ? "grid" : "grid"};
+    display: ${props => props.display ? "grid" : "none"};
     width: 300px;
     height: 500px;
 

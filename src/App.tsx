@@ -8,6 +8,7 @@ import Finder from './components/Finder'
 import MoveWindow from "./components/MoveWindow";
 import { SmallDevices } from "./style";
 import Weather from "./components/Weather";
+import TopBar from "./components/TopBar";
 
 function getRandomArbitrary(min: number, max: number) {
   return Math.floor(Math.random() * (max - min) + min) 
@@ -20,6 +21,17 @@ function App() {
   const [finderDisplay, setFinderDisplay] = useState<boolean>(false)
   const [weatherDisplay, setWeatherDisplay] = useState<boolean>(false)
   const windowSize = useRef([window.innerWidth, window.innerHeight])
+
+  // change Background
+  const [background, setBackground] = useState('')
+  const [videoDisplay, setVideoDisplay] = useState(true)
+
+  const handleBgChange = (value: string) => {
+    setVideoDisplay(false)
+    setBackground(value)
+    console.log('working')
+
+  }
 
   // set the zIndex of the app 
   const [calculatorIndex, setCalculatorIndex] = useState<number>(0)
@@ -68,9 +80,10 @@ function App() {
   const percent50: number = windowSize.current[1]/100*50
   return (
     <div>
-      <VideoBackground />
+      <VideoBackground display={videoDisplay} background={background}/>
       <GlobalStyle />
       <header>
+        <TopBar handleBgChange={handleBgChange}/>
       </header>
       <main>
         <MoveWindow 

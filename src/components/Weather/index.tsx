@@ -68,6 +68,7 @@ function Weather({display, zIndex, handleChangeDisplay}: Props) {
         }  else if (data.weather[0].icon === "50d" || data.weather[0].icon === "50n"){
             setIcon(heavySnow)
         }
+        setCity('')
     }
 
   return (
@@ -97,7 +98,8 @@ function Weather({display, zIndex, handleChangeDisplay}: Props) {
         </S.Main>
         <S.Input>
             <form onSubmit={handleData}>
-                <input type="text" placeholder='Enter a city' maxLength={27}
+                <input type="text" placeholder='City or Country' maxLength={27}
+                value={city}
                 onChange={(e) => setCity(e.target.value)}
                 />
                 <button type='submit'>Go</button>

@@ -105,8 +105,6 @@ function Calculator({display, zIndex, handleChangeDisplay}: Props){
             <S.Header>
                 <div>
                     <B.RButton onClick={() => handleChangeDisplay(1)}></B.RButton>
-                    <B.YButton></B.YButton>
-                    <B.GButton></B.GButton>
                 </div>
             </S.Header>
             <S.Calculus>
