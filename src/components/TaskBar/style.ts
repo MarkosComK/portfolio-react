@@ -35,6 +35,9 @@ export const Nav = styled.nav`
                 width: 60px;
                 transition: 0.2s;
             }
+            a{
+                height: 60px;
+            }
             &:hover{
                 margin-left: 10px;
                 margin-right: 10px;

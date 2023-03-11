@@ -12,6 +12,7 @@ import documentsIcon from './finder-icons/documents.png'
 import downloadsIcon from './finder-icons/downloads.png'
 import driveIcon from './finder-icons/drive.png'
 
+
 // about images
 import profileImg from './images/me-art.png'
 

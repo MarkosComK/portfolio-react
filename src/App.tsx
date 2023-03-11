@@ -29,8 +29,6 @@ function App() {
   const handleBgChange = (value: string) => {
     setVideoDisplay(false)
     setBackground(value)
-    console.log('working')
-
   }
 
   // set the zIndex of the app 

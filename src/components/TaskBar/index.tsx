@@ -100,4 +100,3 @@ function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, h
 }
 
 export default TaskBar
-
