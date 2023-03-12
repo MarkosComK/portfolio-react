@@ -116,7 +116,7 @@ function App() {
         handleFocus={handleTodoFocus}
         zIndex={todoIndex}
         children={
-        <Todo display={todoDisplay} zIndex={todoIndex} handleChangeDisplay={handleChangeDisplay} />
+        <Todo isMobile={isMobile} display={todoDisplay} zIndex={todoIndex} handleChangeDisplay={handleChangeDisplay} />
         }
         />
         <MoveWindow
