@@ -16,6 +16,7 @@ export const Finder = styled.div<Props>`
     background: #1E1E1E;
     border-radius: 10px;
     z-index: ${props => props.zIndex};
+    margin-top: ${props => props.isMobile ? `${40}px`: `${0}`};
     section{
         div:nth-child(2){ /**select the div below <S.FinderButtons> */
             display: flex;
@@ -25,18 +26,24 @@ export const Finder = styled.div<Props>`
         }
     }
 `
+interface HProps{
+    isMobile: boolean
+}
 
-
-export const Header = styled.header`
+export const Header = styled.header<HProps>`
     position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 750px;
-    left: 150px;
+    justify-content: ${props => props.isMobile ? `space-around`: `space-between`};
+    width: ${props => props.isMobile ? `${100}%`: `${750}px`};
+    left: ${props => props.isMobile ? `${0}`: `${150}px`};
     height: 49px;
     z-index: 1;
+    p{
+        display: ${props => props.isMobile ? "none" : "inline"};
+    }
     div{
+        display: ${props => props.isMobile ? "none" : "block"};
         &:nth-child(1){ /* select arrows */
             img{
                 margin: 0 15px;
@@ -48,16 +55,27 @@ export const Header = styled.header`
             }
         }
     }
+    button{
+        display: ${props => props.isMobile ? "block" : "none"};
+        img{
+            margin-right: 2px;
+        }
+    }
 `
 
-export const FinderSidebar = styled.div`
+interface SideBarProps{
+    isMobile: boolean
+}
+
+export const FinderSidebar = styled.div<SideBarProps>`
     width: 150px;
     height: 498px;
+    height: ${props => props.isMobile ? `${100}%`: `${498}px`};
     background: rgba(50, 50, 50, 0.95);
     -webkit-backdrop-filter: blur(48px);
     backdrop-filter: blur(48px);
     border-radius: 10px 0px 0px 10px;
-    display: flex;
+    display: ${props => props.isMobile ? "none" : "flex"};
     flex-direction: column;
     align-items: center;
     ul{

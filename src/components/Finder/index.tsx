@@ -33,7 +33,7 @@ function Finder({display, zIndex, handleChangeDisplay, isMobile}: Props) {
 
   return (
     <S.Finder isMobile={isMobile} display={display} zIndex={zIndex}>
-      <S.Header>
+      <S.Header isMobile={isMobile}>
         <div>
             <img src={leftArrow} alt="" />
             <img src={rightArrow} alt="" />
@@ -42,9 +42,11 @@ function Finder({display, zIndex, handleChangeDisplay, isMobile}: Props) {
         <div>
             <img src={search} alt="" />
         </div>
+        <button onClick={() => setContent('about')}><img src={applicationIcon} alt="" />About</button>
+        <button onClick={() => setContent('work')}><img src={recentIcon} alt="" />Work</button>
       </S.Header>
       <section>
-        <S.FinderSidebar>
+        <S.FinderSidebar isMobile={isMobile}>
             <S.FinderButtons>
                     <B.RButton onClick={() => handleChangeDisplay(3)}></B.RButton>
             </S.FinderButtons>
