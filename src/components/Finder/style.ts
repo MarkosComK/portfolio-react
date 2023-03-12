@@ -12,7 +12,7 @@ export const Finder = styled.div<Props>`
     border: 1px solid rgb(54, 54, 54);
     width: 900px;
     width: ${props => props.isMobile ? `${100}vw`: `${900}px`};
-    height: ${props => props.isMobile ? `${84}vh`: `${500}px`};
+    height: ${props => props.isMobile ? `${80}vh`: `${500}px`};
     background: #1E1E1E;
     border-radius: 10px;
     z-index: ${props => props.zIndex};
