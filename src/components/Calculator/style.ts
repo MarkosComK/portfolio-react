@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 interface Props {
     display: boolean,
-    zIndex: number
+    zIndex: number,
+    isMobile: boolean
 }
 
 export const Calculator = styled.div<Props>`
@@ -12,10 +13,11 @@ export const Calculator = styled.div<Props>`
     background-color: var(--theme-bg-color);
 
 
-    height: 400px;
-    width: 270px;
+    height: ${props => props.isMobile ? `${65}vh`: `${400}px`};
+    width: ${props => props.isMobile ? `${98}vw`: `${270}px`};
     border-radius: 14px;
     z-index: ${props => props.zIndex};
+    margin: ${props => props.isMobile ? `${10}px ${10}px ${0} ${10}px`: 0};
 
     /* Glass effect */
     backdrop-filter: blur(20px);
@@ -54,12 +56,14 @@ export const Calculus = styled.section`
         color: var(--font-color);
     }
 `
-
-export const Buttons = styled.section`
+interface BProps {
+    isMobile: boolean
+}
+export const Buttons = styled.section<BProps>`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2px;
-    height: 250px;
+    height: ${props => props.isMobile ? `${100}%`: `${250}px`};
     border-radius: 0 0 14px 14px;
     color: var(--font-color);
     button{

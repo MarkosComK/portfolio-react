@@ -5,11 +5,12 @@ import { useState } from 'react'
 interface Props {
     display: boolean,
     zIndex: number,
-    handleChangeDisplay: (value: number) => void
+    handleChangeDisplay: (value: number) => void,
+    isMobile: boolean
 }
 
 
-function Calculator({display, zIndex, handleChangeDisplay}: Props){
+function Calculator({display, zIndex, handleChangeDisplay, isMobile}: Props){
 
     // set first value
     let [firstValue,  setFirstValue] = useState('')
@@ -101,7 +102,7 @@ function Calculator({display, zIndex, handleChangeDisplay}: Props){
     }
 
     return(
-        <S.Calculator display={display} zIndex={zIndex}>
+        <S.Calculator isMobile={isMobile} display={display} zIndex={zIndex}>
             <S.Header>
                 <div>
                     <B.RButton onClick={() => handleChangeDisplay(1)}></B.RButton>
@@ -111,7 +112,7 @@ function Calculator({display, zIndex, handleChangeDisplay}: Props){
                 <div>{displayValue()}</div>
                 <p>{operation}</p> 
             </S.Calculus>
-            <S.Buttons>
+            <S.Buttons isMobile={isMobile}>
                 <button onClick={clear}>AC</button>
                 <button onClick={percent}>％</button>
                 <button onClick={() => {addOperation('÷')}}>÷</button>

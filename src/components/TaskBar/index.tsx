@@ -13,52 +13,56 @@ interface Props {
     handleCalculatorFocus: () => void,
     handleTodoFocus: () => void,
     handleFinderFocus: () => void,
-    handleWeatherFocus: () => void
+    handleWeatherFocus: () => void,
+    isMobile: boolean
 }
 
 
-function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, handleFinderFocus, handleWeatherFocus}: Props){
+function TaskBar({handleChangeDisplay, handleCalculatorFocus, handleTodoFocus, handleFinderFocus, handleWeatherFocus, isMobile}: Props){
     const [load, setLoad] = useState(false)
 
-    // create an array with the taskbar elements
-    const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
-
-    const addEventListenersToIcons = () => {
-        if (icons && icons.length > 0) {
-          icons.forEach((item, index) => {
-            item.onmouseover = (e) => focus(e.target  as HTMLElement, index)
-            item.onmouseout = () => {
-              icons.forEach((item) => {
-                if (item.style) {
-                  item.style.transform = "scale(1) translateY(0px)"
-                }
-              })
+    if(!isMobile){
+      // create an array with the taskbar elements
+      const icons: NodeListOf<HTMLElement> = document.querySelectorAll('#navbarIcon')
+  
+      const addEventListenersToIcons = () => {
+          if (icons && icons.length > 0) {
+            icons.forEach((item, index) => {
+              item.onmouseover = (e) => focus(e.target  as HTMLElement, index)
+              item.onmouseout = () => {
+                icons.forEach((item) => {
+                  if (item.style) {
+                    item.style.transform = "scale(1) translateY(0px)"
+                  }
+                })
+              }
+            })
+          }
+        }
+        
+        addEventListenersToIcons()
+        
+        const focus = (target: HTMLElement, index: number) => {
+            let next: number = index + 1
+            let previous: number = index - 1
+    
+            if(index === 0){
+                target.style.transform = "scale(1.3) translateY(-10px)"
+            } 
+            else if(next === icons.length){
+                icons[index].style.transform = "scale(1.3) translateY(-10px)"
+            } else {
+                icons[previous].style.transform = "scale(1.2) translateY(-6px)"
+                icons[index].style.transform = "scale(1.5) translateY(-10px)"
+                icons[next].style.transform = "scale(1.2) translateY(-6px)"
             }
-          })
         }
-      }
-      
-      addEventListenersToIcons()
-      
-      function focus(target: HTMLElement, index: number) {
-        let next: number = index + 1
-        let previous: number = index - 1
 
-        if(index === 0){
-            target.style.transform = "scale(1.3) translateY(-10px)"
-        } 
-        else if(next === icons.length){
-            icons[index].style.transform = "scale(1.3) translateY(-10px)"
-        } else {
-            icons[previous].style.transform = "scale(1.2) translateY(-6px)"
-            icons[index].style.transform = "scale(1.5) translateY(-10px)"
-            icons[next].style.transform = "scale(1.2) translateY(-6px)"
-        }
-      }
+    }
 
 
     return(
-        <Nav>
+        <Nav isMobile={isMobile}>
             <ul onMouseOver={() => setLoad(true)}>
                 <li>
                   <img id="navbarIcon" 

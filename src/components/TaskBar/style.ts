@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Nav = styled.nav`
+interface Props {
+    isMobile: boolean
+}
+
+export const Nav = styled.nav<Props>`
     position: absolute;
     bottom: 10px;
     z-index: 10;
@@ -39,8 +43,8 @@ export const Nav = styled.nav`
                 height: 60px;
             }
             &:hover{
-                margin-left: 10px;
-                margin-right: 10px;
+                margin-left: ${props => props.isMobile ? `${0}px` : `${10}px`};
+                margin-right: ${props => props.isMobile ? `${0}px` : `${10}px`};
                 cursor: pointer;
             }
         }

@@ -10,8 +10,16 @@ import { SmallDevices } from "./style";
 import Weather from "./components/Weather";
 import TopBar from "./components/TopBar";
 
+function verifyIsMobile() {
+  return navigator.maxTouchPoints > 0 && /Android | iPhone/i.test(navigator.userAgent)
+}
+
 function getRandomArbitrary(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) + min) 
+  if(!verifyIsMobile()){
+    return Math.floor(Math.random() * (max - min) + min) 
+  } else {
+    return 0
+  }
 }
 
 function App() {
@@ -76,8 +84,13 @@ function App() {
   // generate random values to display the apps on the screen
   const percent20: number = windowSize.current[0]/100*20
   const percent50: number = windowSize.current[1]/100*50
+
+  // function to verify mobile devices
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+
+  
   return (
-    <div>
+    <div onLoad={() => setIsMobile(verifyIsMobile())}>
       <VideoBackground display={videoDisplay} background={background}/>
       <GlobalStyle />
       <header>
@@ -91,7 +104,7 @@ function App() {
         handleFocus={handleCalculatorFocus}
         zIndex={calculatorIndex}
         children={
-        <Calculator display={calculatorDisplay} zIndex={calculatorIndex} handleChangeDisplay={handleChangeDisplay}/>
+        <Calculator isMobile={isMobile} display={calculatorDisplay} zIndex={calculatorIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
         <MoveWindow 
@@ -132,6 +145,7 @@ function App() {
       handleTodoFocus={handleTodoFocus}
       handleFinderFocus={handleFinderFocus}
       handleWeatherFocus={handleWeatherFocus}
+      isMobile={isMobile}
       />
 
       <SmallDevices>THIS WEBSITE IT`S IN PROGRESS. SMALL DEVICES VERSION COMING SOON</SmallDevices>
