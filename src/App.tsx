@@ -107,7 +107,7 @@ function App() {
         <MoveWindow 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
-        width={740}
+        width={830}
         handleFocus={handleFinderFocus}
         zIndex={finderIndex}
         children={
@@ -117,7 +117,7 @@ function App() {
         <MoveWindow 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
-        width={200} //set the width of the draggable area
+        width={230} //set the width of the draggable area
         handleFocus={handleWeatherFocus}
         zIndex={weatherIndex}
         children={

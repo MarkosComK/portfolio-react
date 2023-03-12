@@ -9,7 +9,7 @@ export const Finder = styled.div<Props>`
     display: ${props => props.display ? "flex" : "none"};
     position: absolute;
     border: 1px solid rgb(54, 54, 54);
-    width: 800px;
+    width: 900px;
     height: 500px;
     background: #1E1E1E;
     border-radius: 10px;
@@ -30,7 +30,7 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 650px;
+    width: 750px;
     left: 150px;
     height: 49px;
     z-index: 1;
@@ -202,8 +202,42 @@ export const ProfileWrap = styled.div`
 
 export const TextWrap = styled.div`
     text-align: center;
+    p:nth-child(1){
+        margin-top: 40px;
+    }
     p{
-        margin: 48px 0;
+        margin: 10px 0;
+        color: var(--font-color);
+        font-size: 16px;
+        line-height: 1.25em;
+        padding: 0 0 1em 0;
+        text-align: left;
+        letter-spacing: 1px;
+        font-weight: 300;
+    }
+    div{
+        p{
+            margin: 0;
+            text-align: center;
+        }
+    }
+ 
+    a{
+        svg{
+            fill: white;
+            &:hover{
+                fill: var(--button-inactive);
+            }
+        }
+    }
+`
+export const Icons = styled.div`
+    width: 100%;
+    a:nth-child(1){
+        margin-right: 3px;
+    }
+    a:nth-child(2){
+        margin-left: 3px;
     }
 `
 
