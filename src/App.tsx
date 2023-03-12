@@ -9,6 +9,7 @@ import MoveWindow from "./components/MoveWindow";
 import { SmallDevices } from "./style";
 import Weather from "./components/Weather";
 import TopBar from "./components/TopBar";
+import StaticBG from './components/TopBar/backgrounds/background-main.jpg'
 
 function verifyIsMobile() {
   return navigator.maxTouchPoints > 0 && /Android | iPhone/i.test(navigator.userAgent)
@@ -31,7 +32,7 @@ function App() {
   const windowSize = useRef([window.innerWidth, window.innerHeight])
 
   // change Background
-  const [background, setBackground] = useState('')
+  const [background, setBackground] = useState(StaticBG)
   const [videoDisplay, setVideoDisplay] = useState(true)
 
   const handleBgChange = (value: string) => {
