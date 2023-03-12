@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 interface Props {
     display: boolean,
-    zIndex: number
+    zIndex: number,
+    isMobile: boolean
 }
 
 export const Weather = styled.div<Props>`
     display: ${props => props.display ? "grid" : "none"};
-    width: 300px;
-    height: 500px;
+    width: ${props => props.isMobile ? `${100}vw` : `${300}px`};
+    height: ${props => props.isMobile ? `${85}vh` : `${500}px`};
+
+    margin-top:  ${props => props.isMobile ? `${40}px` : `${0}`};
 
     grid-template-columns: 1fr;
     grid-template-rows: 40px 1fr 40px;

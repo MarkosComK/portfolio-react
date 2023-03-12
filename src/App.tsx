@@ -138,7 +138,7 @@ function App() {
         handleFocus={handleWeatherFocus}
         zIndex={weatherIndex}
         children={
-        <Weather display={weatherDisplay} zIndex={weatherIndex} handleChangeDisplay={handleChangeDisplay}/>
+        <Weather isMobile={isMobile} display={weatherDisplay} zIndex={weatherIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
       </main>

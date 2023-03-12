@@ -11,7 +11,8 @@ import heavySnow from './icons/heavy-snow.png'
 interface Props {
     display: boolean,
     zIndex: number,
-    handleChangeDisplay: (value: number) => void
+    handleChangeDisplay: (value: number) => void,
+    isMobile: boolean
 }
 
 interface Data {
@@ -35,7 +36,7 @@ interface Data {
     }
 }
 
-function Weather({display, zIndex, handleChangeDisplay}: Props) {
+function Weather({display, zIndex, handleChangeDisplay, isMobile}: Props) {
     const [city, setCity] = useState<string>('')
     const [data, setData] = useState<Data>({name: 'Patos', sys: {country: 'BR'}, wind: {speed: 0}, weather: [{icon: ''}], main: {temp: 310, temp_min: 305, temp_max: 313, humidity: 0}})
     const [icon, setIcon] = useState(sunIcon)
@@ -72,7 +73,7 @@ function Weather({display, zIndex, handleChangeDisplay}: Props) {
     }
 
   return (
-    <S.Weather display={display} zIndex={zIndex}>
+    <S.Weather isMobile={isMobile} display={display} zIndex={zIndex}>
         <S.Header>
             <div>
                 <B.RButton onClick={() => {handleChangeDisplay(4)}}></B.RButton>
