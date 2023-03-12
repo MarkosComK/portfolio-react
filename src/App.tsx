@@ -151,8 +151,6 @@ function App() {
       handleWeatherFocus={handleWeatherFocus}
       isMobile={isMobile}
       />
-
-      <SmallDevices>THIS WEBSITE IT`S IN PROGRESS. SMALL DEVICES VERSION COMING SOON</SmallDevices>
     </div>
   );
 }
