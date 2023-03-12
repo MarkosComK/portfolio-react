@@ -13,15 +13,21 @@ export const Calculator = styled.div<Props>`
     background-color: var(--theme-bg-color);
 
 
-    height: ${props => props.isMobile ? `${65}vh`: `${400}px`};
-    width: ${props => props.isMobile ? `${98}vw`: `${270}px`};
+    height: ${props => props.isMobile ? `${68}vh`: `${400}px`};
+    width: ${props => props.isMobile ? `${100}vw`: `${270}px`};
     border-radius: 14px;
     z-index: ${props => props.zIndex};
-    margin: ${props => props.isMobile ? `${10}px ${10}px ${0} ${10}px`: 0};
+    margin-top: ${props => props.isMobile ? `${40}px`: 0};
 
     /* Glass effect */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    header{
+        display: ${props => props.isMobile ? `none`: "flex"};
+    }
+    section:nth-child(2){ /* select the screen (S.Calculus) */
+        height: ${props => props.isMobile ? `${112}px`: `${38}px`};
+    }
 `
 export const Header = styled.header`
     display: flex;
