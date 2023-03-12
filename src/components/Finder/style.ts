@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 interface Props {
     display: boolean,
-    zIndex: number
+    zIndex: number,
+    isMobile: boolean
 }
 
 export const Finder = styled.div<Props>`
@@ -10,7 +11,8 @@ export const Finder = styled.div<Props>`
     position: absolute;
     border: 1px solid rgb(54, 54, 54);
     width: 900px;
-    height: 500px;
+    width: ${props => props.isMobile ? `${100}vw`: `${900}px`};
+    height: ${props => props.isMobile ? `${84}vh`: `${500}px`};
     background: #1E1E1E;
     border-radius: 10px;
     z-index: ${props => props.zIndex};

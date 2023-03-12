@@ -97,7 +97,8 @@ function App() {
         <TopBar handleBgChange={handleBgChange}/>
       </header>
       <main>
-        <MoveWindow 
+        <MoveWindow
+        isMobile={isMobile} 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
         width={200} //set the width of the draggable area
@@ -107,7 +108,8 @@ function App() {
         <Calculator isMobile={isMobile} display={calculatorDisplay} zIndex={calculatorIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
-        <MoveWindow 
+        <MoveWindow
+        isMobile={isMobile} 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
         width={230}
@@ -117,17 +119,19 @@ function App() {
         <Todo display={todoDisplay} zIndex={todoIndex} handleChangeDisplay={handleChangeDisplay} />
         }
         />
-        <MoveWindow 
+        <MoveWindow
+        isMobile={isMobile} 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} 
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} 
         width={830}
         handleFocus={handleFinderFocus}
         zIndex={finderIndex}
         children={
-        <Finder display={finderDisplay} zIndex={finderIndex} handleChangeDisplay={handleChangeDisplay}/>
+        <Finder isMobile={isMobile} display={finderDisplay} zIndex={finderIndex} handleChangeDisplay={handleChangeDisplay}/>
         }
         />
-        <MoveWindow 
+        <MoveWindow
+        isMobile={isMobile} 
         initialX={getRandomArbitrary(50, windowSize.current[0]- percent20)} //generate a random initialX to the window
         initialY={getRandomArbitrary(50, windowSize.current[1]- percent50)} //generate a random initialY to the window
         width={230} //set the width of the draggable area

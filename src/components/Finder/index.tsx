@@ -24,14 +24,15 @@ import githubFolder from './finder-icons/github-folder.png'
 interface Props {
     display: boolean,
     zIndex: number,
-    handleChangeDisplay: (value: number) => void
+    handleChangeDisplay: (value: number) => void,
+    isMobile: boolean
 }
 
-function Finder({display, zIndex, handleChangeDisplay}: Props) {
+function Finder({display, zIndex, handleChangeDisplay, isMobile}: Props) {
     const [content, setContent] = useState<string>('about')
 
   return (
-    <S.Finder display={display} zIndex={zIndex}>
+    <S.Finder isMobile={isMobile} display={display} zIndex={zIndex}>
       <S.Header>
         <div>
             <img src={leftArrow} alt="" />

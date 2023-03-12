@@ -7,7 +7,8 @@ interface Props {
   width: number,
   handleFocus: () => void,
   zIndex: number,
-  children: JSX.Element
+  children: JSX.Element,
+  isMobile: boolean
 }
 
 interface Position {
@@ -15,7 +16,7 @@ interface Position {
     y: number
 }
 
-function MoveWindow({ initialX, initialY, width, handleFocus, zIndex, children }: Props) {
+function MoveWindow({ initialX, initialY, width, handleFocus, zIndex, children, isMobile}: Props) {
     const [isDragging, setIsDragging] = useState(false)
     const [position, setPosition] = useState<Position>({ x: initialX, y: initialY })
     const mouseStart = useRef<Position>({ x: 0, y: 0 });
@@ -43,24 +44,31 @@ function MoveWindow({ initialX, initialY, width, handleFocus, zIndex, children }
             mousePrev.current = { x: e.clientX, y: e.clientY }
         } 
     }
-
-    return (
-        <S.MovableWindow
-            top={position.y}
-            left={position.x}
-            onMouseDown={handleFocus}
-            >
-            <S.Header 
-                onMouseDown={handleDragOn}
-                onMouseUp={handleDragOff}
-                onMouseMove={handleMouseMove}
-                width={width}
-                zIndex={zIndex}
-            >
-            </S.Header>
-            {children}
-        </S.MovableWindow>
-    )
+    if(isMobile){
+        return(
+            <div>
+                {children}
+            </div>
+        )
+    } else{
+        return (
+            <S.MovableWindow
+                top={position.y}
+                left={position.x}
+                onMouseDown={handleFocus}
+                >
+                <S.Header 
+                    onMouseDown={handleDragOn}
+                    onMouseUp={handleDragOff}
+                    onMouseMove={handleMouseMove}
+                    width={width}
+                    zIndex={zIndex}
+                >
+                </S.Header>
+                {children}
+            </S.MovableWindow>
+        )
+    }
 }
 
 export default MoveWindow
