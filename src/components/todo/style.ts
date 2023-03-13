@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 interface Props {
     display: boolean,
-    zIndex: number
+    zIndex: number,
+    isMobile: boolean
 }
 
 export const Todo = styled.div<Props>`
@@ -10,8 +11,10 @@ export const Todo = styled.div<Props>`
     grid-template-columns: 1fr;
     grid-template-rows: 38px 1fr 38px;
     position: absolute;
-    width: 300px;
-    height: 400px;
+    width: ${props => props.isMobile ? `${100}vw` : `${300}px`};
+    height: ${props => props.isMobile ? `${70}vh` : `${400}px`};
+
+    margin-top: ${props => props.isMobile ? `${40}px` : `${0}`};
 
     
     background-color: var(--theme-bg-color);
@@ -99,13 +102,21 @@ export const Todo = styled.div<Props>`
         }
     }
 `
-export const Header = styled.header`
+
+interface HProps {
+    isMobile: boolean
+}
+
+export const Header = styled.header<HProps>`
     display: flex;
     align-items: center;
     flex-shrink: 0;
     height: 38px;
     width: 100%;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: ${props => props.isMobile ? "none" : `${1}px solid var(--border-color)`};
     padding: 0 10px;
     white-space: nowrap;
+    div{
+        display: ${props => props.isMobile ? `none` : `block`};
+    }
 `

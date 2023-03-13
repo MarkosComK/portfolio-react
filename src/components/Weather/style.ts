@@ -9,7 +9,7 @@ interface Props {
 export const Weather = styled.div<Props>`
     display: ${props => props.display ? "grid" : "none"};
     width: ${props => props.isMobile ? `${100}vw` : `${300}px`};
-    height: ${props => props.isMobile ? `${85}vh` : `${500}px`};
+    height: ${props => props.isMobile ? `${70}vh` : `${500}px`};
 
     margin-top:  ${props => props.isMobile ? `${40}px` : `${0}`};
 

@@ -13,7 +13,7 @@ export const Calculator = styled.div<Props>`
     background-color: var(--theme-bg-color);
 
 
-    height: ${props => props.isMobile ? `${68}vh`: `${400}px`};
+    height: ${props => props.isMobile ? `${48}vh`: `${400}px`};
     width: ${props => props.isMobile ? `${100}vw`: `${270}px`};
     border-radius: 14px;
     z-index: ${props => props.zIndex};
@@ -26,7 +26,7 @@ export const Calculator = styled.div<Props>`
         display: ${props => props.isMobile ? `none`: "flex"};
     }
     section:nth-child(2){ /* select the screen (S.Calculus) */
-        height: ${props => props.isMobile ? `${112}px`: `${38}px`};
+        height: ${props => props.isMobile ? `${112}px`: `${79}px`};
     }
 `
 export const Header = styled.header`

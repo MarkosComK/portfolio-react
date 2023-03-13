@@ -92,7 +92,7 @@ function App() {
   
   return (
     <div onLoad={() => setIsMobile(verifyIsMobile())}>
-      <VideoBackground display={videoDisplay} background={background}/>
+      <VideoBackground isMobile={isMobile} display={videoDisplay} background={background}/>
       <GlobalStyle />
       <header>
         <TopBar handleBgChange={handleBgChange}/>
